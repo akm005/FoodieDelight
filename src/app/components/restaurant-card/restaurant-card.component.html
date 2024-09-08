@@ -54,7 +54,7 @@
             <p-badge [value]="tag" *ngFor="let tag of resData.tags" />
         </div>
     </div>
-    <div *ngIf="isLoading" class="px-3 mt-3 md:max-w-72 sm:max-w-96 min-w-72 sm:min-w-96 pb-3 min-h-80 max-h-80 flex flex-col justify-center items-start">
+    <div *ngIf="isLoading" class="px-3 mt-3 w-full sm:max-w-96 lg:max-w-72 md:max-w-72 md:min-w-72 sm:min-w-96 pb-3 min-h-80 max-h-80 flex flex-col justify-center items-start">
         <p-skeleton width="12rem" height="1.5rem" styleClass="mt-2 mb-2 p-2" />
         <p-skeleton width="14rem" height="3rem" styleClass="mb-2 p-2" />
         <p-skeleton width="6rem" height="3rem" styleClass="mb-2" />
