@@ -1,4 +1,6 @@
-<div *ngIf="resData" [ngClass]="!resData.active?' backdrop-grayscale bg-white/30 ':''" class="shadow-sm flex flex-col justify-start items-center shadow-orange-100 card group rounded-2xl bg-gradient-to-br from-yellow-100 to-orange-100 ease-in-out delay-150 transition-all duration-100 lg:min-w-72 sm:min-w-[25em] md:min-w-[21em] md:max-w-[22rem] lg:max-w-72 sm:max-w-96">
+<div *ngIf="resData" [ngClass]="!resData.active?' backdrop-grayscale bg-white/30 ':''" 
+class="shadow-sm flex flex-col justify-start items-center shadow-orange-100 card group rounded-2xl bg-gradient-to-br from-yellow-100 to-orange-100 ease-in-out delay-150 transition-all duration-100  
+min-w-[21rem] max-w-60 sm:min-w-[22em] md:max-w-[22rem] lg:min-w-72  lg:max-w-72">
     <div class="w-full relative hover:backdrop-saturate-50 hover:bg-white/30 rounded-t-2xl min-h-40 bg-img">
         <div (click)="edit()"
             class="absolute z-10 hidden top-2 right-0 group-hover:block p-3 cursor-pointer backdrop-brightness-75 bg-gradient-to-br from-yellow-200 to-orange-200 rounded-full -translate-x-2">
@@ -54,7 +56,7 @@
             <p-badge [value]="tag" *ngFor="let tag of resData.tags" />
         </div>
     </div>
-    <div *ngIf="isLoading" class="card-item px-3 mt-3 pb-3 min-h-80 max-h-80 flex flex-col justify-center items-start">
+    <div *ngIf="!isLoading" class="card-item px-3 mt-3 pb-3 min-h-80 max-h-80 flex flex-col justify-center items-start">
         <p-skeleton width="12rem" height="1.5rem" styleClass="mt-2 mb-2 p-2" />
         <p-skeleton width="14rem" height="3rem" styleClass="mb-2 p-2" />
         <p-skeleton width="6rem" height="3rem" styleClass="mb-2" />
