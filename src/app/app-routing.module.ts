@@ -31,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'admin/login',
+    redirectTo: 'admin/home',
   },
 ];
 
