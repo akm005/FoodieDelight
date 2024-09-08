@@ -56,7 +56,7 @@ min-w-[21rem] max-w-60 sm:min-w-[22em] md:max-w-[22rem] lg:min-w-72  lg:max-w-72
             <p-badge [value]="tag" *ngFor="let tag of resData.tags" />
         </div>
     </div>
-    <div *ngIf="!isLoading" class="card-item px-3 mt-3 pb-3 min-h-80 max-h-80 flex flex-col justify-center items-start">
+    <div *ngIf="isLoading" class="card-item px-3 mt-3 pb-3 min-h-80 max-h-80 flex flex-col justify-center items-start">
         <p-skeleton width="12rem" height="1.5rem" styleClass="mt-2 mb-2 p-2" />
         <p-skeleton width="14rem" height="3rem" styleClass="mb-2 p-2" />
         <p-skeleton width="6rem" height="3rem" styleClass="mb-2" />
