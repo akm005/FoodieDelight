@@ -1,0 +1,68 @@
+[
+  {
+      "first_name": "Michael",
+      "last_name": "Smith",
+      "email": "michael.smith@user.com",
+      "password": "1234",
+      "contact": "+1-555-1001",
+      "gender": "Male",
+      "created_at": "2024-02-01",
+      "image": "./assets/data/images/users/user1.png",
+      "authority": "Admin"
+  },
+  {
+      "first_name": "James",
+      "last_name": "Johnson",
+      "email": "james.johnson@user.com",
+      "password": "1234",
+      "contact": "+1-555-1002",
+      "gender": "Male",
+      "created_at": "2024-02-02",
+      "image": "./assets/data/images/users/user2.png",
+      "authority": "Admin"
+  },
+  {
+      "first_name": "John",
+      "last_name": "Williams",
+      "email": "john.williams@user.com",
+      "password": "1234",
+      "contact": "+1-555-1003",
+      "gender": "Male",
+      "created_at": "2024-02-03",
+      "image": "./assets/data/images/users/user3.png",
+      "authority": "Admin"
+  },
+  {
+      "first_name": "Emily",
+      "last_name": "Davis",
+      "email": "emily.davis@user.com",
+      "password": "1234",
+      "contact": "+1-555-2001",
+      "gender": "Female",
+      "created_at": "2024-02-04",
+      "image": "./assets/data/images/users/user4.png",
+      "authority": "Admin"
+  },
+  {
+      "first_name": "Olivia",
+      "last_name": "Brown",
+      "email": "olivia.brown@user.com",
+      "password": "1234",
+      "contact": "+1-555-2002",
+      "gender": "Female",
+      "created_at": "2024-02-05",
+      "image": "./assets/data/images/users/user5.png",
+      "authority": "Admin"
+  },
+  {
+      "first_name": "Sophia",
+      "last_name": "Wilson",
+      "email": "sophia.wilson@user.com",
+      "password": "1234",
+      "contact": "+1-555-2003",
+      "gender": "Female",
+      "created_at": "2024-02-06",
+      "image": "./assets/data/images/users/user6.png",
+      "authority": "Admin"
+  }
+]

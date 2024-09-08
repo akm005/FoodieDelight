@@ -1,0 +1,29 @@
+.main {
+  background: radial-gradient(circle, orange 2%, transparent 12%) 0 0,
+  radial-gradient(circle, yellow 2%, transparent 12%) 1.5em -1.6em,
+  repeating-linear-gradient(
+      0deg,
+      transparent 6.5%,
+      #ffffff 7%,
+      #ffffff 9%,
+      transparent 10%
+  ),
+  linear-gradient(
+      45deg,
+      transparent 49%,
+      yellow 49%,
+      yellow 51%,
+      transparent 51%
+  ),
+  linear-gradient(
+      -45deg,
+      transparent 49%,
+      orange 49%,
+      orange 51%,
+      transparent 51%
+  );
+
+  background-size: 3em 3em;
+  background-color: #ffffff;
+  opacity: 1;
+}

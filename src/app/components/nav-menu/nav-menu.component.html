@@ -1,0 +1,17 @@
+<ul class="md:flex p-2" [ngClass]="isLogin ?  '' : 'hidden'" >
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class=" p-2 rounded-full border relative border-spacing-4 border-transparent hover:border-gray-100 hover:text-blue-500 ease-in-out delay-150
+        transition-all active:text-green-400 active:scale-105 text-black">
+        <a routerLink="admin/home">
+            <span>Home</span>
+        </a>
+    </li>
+    <li *ngIf="isLogin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class=" p-2 rounded-full border border-spacing-4 border-transparent hover:border-gray-100 relative
+        hover:text-blue-500 ease-in-out delay-150 transition-all ">
+        <a routerLink="admin/restaurant/add"><span>Add New</span></a>
+    </li>
+    <!-- <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        class=" p-2 rounded-full border border-spacing-4 border-transparent hover:border-gray-100 relative
+        hover:text-blue-500 ease-in-out delay-150 transition-all">
+        <a routerLink="admin/restaurant/menu"><span>Menu3</span></a>
+    </li> -->
+</ul>

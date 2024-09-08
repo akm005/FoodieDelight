@@ -1,0 +1,9 @@
+<div class="md:p-6 w-full p-2 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
+  <ng-container *ngFor="let item of displayedData">
+    <app-restaurant-card class="sm:justify-self-center md:justify-self-auto max-w-60" [resData]="item"></app-restaurant-card>
+  </ng-container>
+</div>
+<div *ngIf="displayedData.length > 0" class="w-full flex justify-center items-center">
+  <p-paginator (onPageChange)="onPageChange($event)" styleClass="rounded-full bg-gradient-to-r from-yellow-100 to-orange-100" [first]="first" [rows]="rows" [totalRecords]="restaurantData.length"
+  [rowsPerPageOptions]="[5 , 10, 15]"></p-paginator>
+</div>
