@@ -1,5 +1,5 @@
-<div *ngIf="resData" [ngClass]="!resData.active?' backdrop-grayscale bg-white/30 ':''" class="shadow-sm flex flex-col justify-start items-center shadow-orange-100 card group rounded-2xl bg-gradient-to-br from-yellow-100 to-orange-100 ease-in-out delay-150 transition-all duration-100 min-w-60 md:max-w-[22rem] lg:max-w-72 sm:max-w-96">
-    <div class="relative hover:backdrop-saturate-50 hover:bg-white/30 w-full rounded-t-2xl min-h-40 bg-img">
+<div *ngIf="resData" [ngClass]="!resData.active?' backdrop-grayscale bg-white/30 ':''" class="shadow-sm flex flex-col justify-start items-center shadow-orange-100 card group rounded-2xl bg-gradient-to-br from-yellow-100 to-orange-100 ease-in-out delay-150 transition-all duration-100 lg:min-w-72 sm:min-w-[25em] md:min-w-[21em] md:max-w-[22rem] lg:max-w-72 sm:max-w-96">
+    <div class="w-full relative hover:backdrop-saturate-50 hover:bg-white/30 rounded-t-2xl min-h-40 bg-img">
         <div (click)="edit()"
             class="absolute z-10 hidden top-2 right-0 group-hover:block p-3 cursor-pointer backdrop-brightness-75 bg-gradient-to-br from-yellow-200 to-orange-200 rounded-full -translate-x-2">
             <i class="pi pi-file-edit"></i>
@@ -13,7 +13,7 @@
             [placeholderConfig]="{blur: false}"
             placeholder="data:image/svg+xml;base64,77u/PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48Y2lyY2xlIGZpbGw9IiMwRDAyMDAiIHN0cm9rZT0iIzBEMDIwMCIgc3Ryb2tlLXdpZHRoPSIyIiByPSIxNSIgY3g9IjQwIiBjeT0iMTAwIj48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiBjYWxjTW9kZT0ic3BsaW5lIiBkdXI9IjIiIHZhbHVlcz0iMTswOzE7IiBrZXlTcGxpbmVzPSIuNSAwIC41IDE7LjUgMCAuNSAxIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgYmVnaW49Ii0uNCI+PC9hbmltYXRlPjwvY2lyY2xlPjxjaXJjbGUgZmlsbD0iIzBEMDIwMCIgc3Ryb2tlPSIjMEQwMjAwIiBzdHJva2Utd2lkdGg9IjIiIHI9IjE1IiBjeD0iMTAwIiBjeT0iMTAwIj48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiBjYWxjTW9kZT0ic3BsaW5lIiBkdXI9IjIiIHZhbHVlcz0iMTswOzE7IiBrZXlTcGxpbmVzPSIuNSAwIC41IDE7LjUgMCAuNSAxIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgYmVnaW49Ii0uMiI+PC9hbmltYXRlPjwvY2lyY2xlPjxjaXJjbGUgZmlsbD0iIzBEMDIwMCIgc3Ryb2tlPSIjMEQwMjAwIiBzdHJva2Utd2lkdGg9IjIiIHI9IjE1IiBjeD0iMTYwIiBjeT0iMTAwIj48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiBjYWxjTW9kZT0ic3BsaW5lIiBkdXI9IjIiIHZhbHVlcz0iMTswOzE7IiBrZXlTcGxpbmVzPSIuNSAwIC41IDE7LjUgMCAuNSAxIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgYmVnaW49IjAiPjwvYW5pbWF0ZT48L2NpcmNsZT48L3N2Zz4="/>
     </div>
-    <div *ngIf="!isLoading" [ngClass]="!resData.active?' backdrop-grayscale bg-white/30 ':''" class="px-3 w-full pb-3 min-h-80 max-h-80 flex flex-col justify-center items-start">
+    <div *ngIf="!isLoading" [ngClass]="!resData.active?' backdrop-grayscale bg-white/30 ':''" class="card-item px-3 pb-3 min-h-80 max-h-80 flex flex-col justify-center items-start">
 
         <div class="text-lg font-semibold">{{resData.name}}</div>
         <div class="text-sm italic font-light grow">
@@ -54,7 +54,7 @@
             <p-badge [value]="tag" *ngFor="let tag of resData.tags" />
         </div>
     </div>
-    <div *ngIf="isLoading" class="px-3 mt-3 w-full sm:max-w-96 lg:max-w-72 md:max-w-72 md:min-w-72 sm:min-w-96 pb-3 min-h-80 max-h-80 flex flex-col justify-center items-start">
+    <div *ngIf="isLoading" class="card-item px-3 mt-3 pb-3 min-h-80 max-h-80 flex flex-col justify-center items-start">
         <p-skeleton width="12rem" height="1.5rem" styleClass="mt-2 mb-2 p-2" />
         <p-skeleton width="14rem" height="3rem" styleClass="mb-2 p-2" />
         <p-skeleton width="6rem" height="3rem" styleClass="mb-2" />
