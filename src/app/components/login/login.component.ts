@@ -20,6 +20,9 @@ export class LoginComponent implements OnInit {
     private login: LoginService,
     private router: Router
   ) {}
+  get control() {
+    return this.loginForm.controls;
+  }
 
   ngOnInit(): void {
     this.login.demoUserSubject.subscribe((user) => {
@@ -64,8 +67,8 @@ export class LoginComponent implements OnInit {
         }
       });
     } else {
-      this.isInvalid = true;
       this.markAllAsTouched(this.loginForm);
+      this.isInvalid = true;
     }
   }
 
