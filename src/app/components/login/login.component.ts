@@ -37,6 +37,17 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  markAllAsTouched(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach(key => {
+      const control = formGroup.get(key);
+      if (control && control instanceof FormGroup) {
+        this.markAllAsTouched(control);
+      } else {
+        control?.markAsTouched();
+      }
+    });
+  }
+
   onSubmit() {
     if (this.loginForm.valid) {
       this.isInvalid = false;
@@ -54,6 +65,7 @@ export class LoginComponent implements OnInit {
       });
     } else {
       this.isInvalid = true;
+      this.markAllAsTouched(this.loginForm);
     }
   }
 
