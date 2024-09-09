@@ -21,7 +21,7 @@
                 </div>
             </div>
             <button (click)="handleLogin()"
-                class="hidden md:flex p-2 px-4 border rounded-full hover:border-orange-500 hover:text-orange-500  ">{{!isLogin?"SignIn":"Log
+                class="hidden md:flex p-2 px-4 border rounded-full hover:border-orange-500 hover:text-orange-500  ">{{!isLogin?"Sign In":"Log
                 Out"}}</button>
 
             <button *ngIf="!isMenuOpen" class="md:hidden" (click)="isMenuOpen = !isMenuOpen"><i class="px-2 pi"
@@ -44,7 +44,7 @@
         <app-nav-menu [isLogin]="isLogin" />
 
         <button (click)="handleLogin()"
-            class="p-4 my-6 border rounded-full hover:border-orange-500 hover:text-orange-500  ">{{!isLogin?"SignIn":"Log
+            class="p-4 my-6 border rounded-full hover:border-orange-500 hover:text-orange-500  ">{{!isLogin?"Sign In":"Log
             Out"}}</button>
     </div>
 </p-sidebar>
