@@ -52,7 +52,7 @@ min-w-[21rem] max-w-60 sm:min-w-[22em] md:max-w-[22rem] lg:min-w-72  lg:max-w-72
             <span><i class="font-semibold pi pi-unlock"></i></span>
             <span>{{resData.close}}</span>
         </div>
-        <div class="flex flex-row gap-2 text-sm italic font-light">
+        <div class="min-h-7 flex flex-row gap-2 text-sm italic font-light">
             <p-badge [value]="tag" *ngFor="let tag of resData.tags" />
         </div>
     </div>

@@ -5,8 +5,8 @@
         [formGroup]="form" (ngSubmit)="onSubmit()">
         <div *ngIf="isInvalid" class="p-2 text-xs text-red-500 self-center">Details not valid please check again</div>
         <div class=" p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
-            <label class="" for="name">Name of Restaurant</label>
-            <input class="col-span-2 p-2" type="text" pInputText formControlName="name" />
+            <label class="" for="name">Name of Restaurant<span class="ml-1 text-sm text-red-500">*</span></label>
+            <input class="col-span-2 p-2" placeholder="Your Name" type="text" pInputText formControlName="name" />
             <div *ngIf="control.name.touched && control.name.invalid"
                 class="error text-red-500 col-start-2 col-span-2 flex flex-row justify-center">
                 <small *ngIf="control.name.errors?.required">Name is required.</small>
@@ -16,75 +16,79 @@
             </div>
         </div>
         <div class="p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
-            <label class="" for="description">Description</label>
-            <input class="col-span-2 p-2" type="text" pInputText formControlName="description" />
+            <label class="" for="description">Description<span class="ml-1 text-sm text-red-500">*</span></label>
+            <input class="col-span-2 p-2" placeholder="Hotel Description" type="text" pInputText formControlName="description" />
             <div *ngIf="control.description.touched && control.description.invalid"
                 class="error text-red-500 col-start-2 col-span-2 flex flex-row justify-center">
                 <small *ngIf="control?.description?.errors?.required">Description is required.</small>
             </div>
         </div>
         <div class="p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
-            <label class="" for="email">Email</label>
-            <input class="col-span-2 p-2" type="text" pInputText formControlName="email" />
+            <label class="" for="email">Email<span class="ml-1 text-sm text-red-500">*</span></label>
+            <input class="col-span-2 p-2" type="text" placeholder="youremail@resto.com" pInputText formControlName="email" />
             <div *ngIf="control.email.touched && control.email.invalid"
                 class="error text-red-500 col-start-2 col-span-2 flex flex-row justify-center">
                 <small *ngIf="control?.email?.errors?.required">email is required.</small>
-                <small *ngIcontrol="control.email.errors?.email">
+                <small *ngIf="control?.email?.errors?.email">
                     Email is not Valid.
                 </small>
             </div>
         </div>
         <div class="p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
-            <label class="" for="contact">Contact</label>
+            <label class="" for="contact">Contact<span class="ml-1 text-sm text-red-500">*</span></label>
             <p-inputMask class="col-span-2" styleClass="w-full max-w-full" mask="999-9999-999" formControlName="contact"
                 placeholder="999-9999-999" />
             <div *ngIf="control.contact.touched && control.contact.invalid"
                 class="error text-red-500 col-start-2 col-span-2 flex flex-row justify-center">
                 <small *ngIf="control?.contact?.errors?.required">Contact is required.</small>
+                <small *ngIf="control?.contact?.errors?.pattern">Contact not Valid.</small>
             </div>
         </div>
         <div class="p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
-            <label class="" for="address">Address</label>
-            <input class="col-span-2 p-2" type="text" pInputText formControlName="address" />
+            <label class="" for="address">Address<span class="ml-1 text-sm text-red-500">*</span></label>
+            <input class="col-span-2 p-2" type="text" placeholder="63,New Street 4" pInputText formControlName="address" />
             <div *ngIf="control.address.touched && control.address.invalid"
                 class="error text-red-500 col-start-2 col-span-2 flex flex-row justify-center">
                 <small *ngIf="control?.address?.errors?.required">Address is required.</small>
             </div>
         </div>
         <div class="p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
-            <label class="" for="city">City</label>
-            <input class="col-span-2 p-2" type="text" pInputText formControlName="city" />
+            <label class="" for="city">City<span class="ml-1 text-sm text-red-500">*</span></label>
+            <input class="col-span-2 p-2" type="text" placeholder="New York" pInputText formControlName="city" />
             <div *ngIf="control.city.touched && control.city.invalid"
                 class="error text-red-500 col-start-2 col-span-2 flex flex-row justify-center">
                 <small *ngIf="control?.city?.errors?.required">City is required.</small>
             </div>
         </div>
         <div class="p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
-            <label class="" for="state">State</label>
-            <input class="col-span-2 p-2" type="text" pInputText formControlName="state" />
+            <label class="" for="state">State<span class="ml-1 text-sm text-red-500">*</span></label>
+            <input class="col-span-2 p-2" type="text" pInputText placeholder="New York State" formControlName="state" />
             <div *ngIf="control.state.touched && control.state.invalid"
                 class="error text-red-500 col-start-2 col-span-2 flex flex-row justify-center">
                 <small *ngIf="control?.state?.errors?.required">State is required.</small>
             </div>
         </div>
         <div class="p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
-            <label class="" for="zip">Pincode</label>
-            <input class="col-span-2 p-2" type="text" pInputText formControlName="zip" />
+            <label class="" for="zip">Pincode<span class="ml-1 text-sm text-red-500">*</span></label>
+            <!-- <input class="col-span-2 p-2" type="number" maxlength="6" minlength="6" pInputText formControlName="zip" /> -->
+            <p-inputMask class="col-span-2" styleClass="w-full max-w-full" mask="999999" formControlName="zip"
+                placeholder="999999" />
             <div *ngIf="control.zip.touched && control.zip.invalid"
                 class="error text-red-500 col-start-2 col-span-2 flex flex-row justify-center">
                 <small *ngIf="control?.zip?.errors?.required">Pincode is required.</small>
+                <small *ngIf="control?.zip?.errors?.pattern">Pincode not Valid.</small>
             </div>
         </div>
         <div class="p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
             <label class="" for="tags">Tags</label>
-            <p-chips class="col-span-2" formControlName="tags" styleClass="w-full max-w-full" />
-            <div *ngIf="control.tags.touched && control.tags.invalid"
+            <p-chips class="col-span-2" formControlName="tags" placeholder="Ambient" styleClass="w-full max-w-full" />
+            <!-- <div *ngIf="control.tags.touched && control.tags.invalid"
                 class="error text-red-500 col-start-2 col-span-2 flex flex-row justify-center">
                 <small *ngIf="control?.tags?.errors?.required">At least one Tags is required.</small>
-            </div>
+            </div> -->
         </div>
         <div class="p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
-            <label class="" for="active">Active Status</label>
+            <label class="" for="active">Active Status<span class="ml-1 text-sm text-red-500">*</span></label>
             <p-checkbox formControlName="active" [binary]="true" inputId="binary" class="ng-invalid ng-dirty" />
             <div *ngIf="control.active.touched && control.active.invalid"
                 class="error text-red-500 col-start-2 col-span-2 flex flex-row justify-center">
@@ -94,23 +98,24 @@
         <div class="p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
             <label class="" for="rating">Rating</label>
             <p-rating class="col-span-2" formControlName="rating" />
-            <div *ngIf="control.rating.touched && control.rating.invalid"
+            <!-- <div *ngIf="control.rating.touched && control.rating.invalid"
                 class="error text-red-500 col-start-2 col-span-2 flex flex-row justify-center">
                 <small *ngIf="control?.rating?.errors?.required">Rating is required.</small>
-            </div>
+            </div> -->
         </div>
         <div class="p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
-            <label class="" for="type">Type</label>
-            <p-dropdown class="col-span-2" styleClass="max-w-full" formControlName="type" [options]="types"
+            <label class="" for="type">Type<span class="ml-1 text-sm text-red-500">*</span></label>
+            <p-dropdown class="col-span-2" styleClass="max-w-full" placeholder="VEG" formControlName="type" [options]="types"
                 optionLabel="name" optionValue="code" placeholder="Type of Restaurant" />
             <div *ngIf="control.type.touched && control.type.invalid"
                 class="error text-red-500 col-start-2 col-span-2 flex flex-row justify-center">
                 <small *ngIf="control?.type?.errors?.required">Type is required.</small>
+                <small *ngIf="control?.type?.errors?.pattern">Type is not Valid.</small>
             </div>
         </div>
         <div class="p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
-            <label class="" for="open">Opening Time</label>
-            <p-calendar class="col-span-2" styleClass="w-full max-w-full" inputId="open" formControlName="open"
+            <label class="" for="open">Opening Time<span class="ml-1 text-sm text-red-500">*</span></label>
+            <p-calendar class="col-span-2" styleClass="w-full max-w-full" inputId="open" placeholder="09:00 AM" formControlName="open"
                 [hourFormat]="'12'" [timeOnly]="true" />
             <div *ngIf="control.open.touched && control.open.invalid"
                 class="error text-red-500 col-start-2 col-span-2 flex flex-row justify-center">
@@ -118,8 +123,8 @@
             </div>
         </div>
         <div class="p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
-            <label class="" for="close">closing Time</label>
-            <p-calendar class="col-span-2" styleClass="w-full max-w-full" inputId="close" formControlName="close"
+            <label class="" for="close">closing Time<span class="ml-1 text-sm text-red-500">*</span></label>
+            <p-calendar class="col-span-2" styleClass="w-full max-w-full" inputId="close" placeholder="09:00 PM" formControlName="close"
                 [hourFormat]="'12'" [timeOnly]="true" />
             <div *ngIf="control.close.touched && control.close.invalid"
                 class="error text-red-500 col-start-2 col-span-2 flex flex-row justify-center">
@@ -127,7 +132,7 @@
             </div>
         </div>
         <div class="p-2 grid grid-cols-3 gap-x-4 gap-y-1 items-center">
-            <label class="" for="image">Upload Image</label>
+            <label class="" for="image">Upload Image<span class="ml-1 text-sm text-red-500">*</span></label>
             <p-fileUpload class="col-start-2 col-span-2" name="myfile[]" url="https://www.primefaces.org/cdn/api/upload.php"
                 [multiple]="true" accept="image/*" maxFileSize="1000000" (onUpload)="onTemplatedUpload()"
                 (onSelect)="onSelectedFiles($event)">

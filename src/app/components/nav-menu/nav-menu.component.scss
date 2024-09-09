@@ -1,0 +1,32 @@
+.active{
+    text-decoration: underline !important;
+    text-decoration-color: orange !important;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 10px;  
+}
+
+
+.highlighter {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.highlighter::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7px;
+    height: 2px;
+    background: linear-gradient(to right, yellow, orange); 
+    transition: width 0.4s ease-in-out; 
+}
+.highlighter:hover::after {
+    width: 80%;
+}
