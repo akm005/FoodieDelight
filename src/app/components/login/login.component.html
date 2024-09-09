@@ -1,15 +1,16 @@
 <div class="md:mx-10 p-6 flex flex-col justify-center items-center">
     <div
         class="relative md:mx-40 flex flex-col justify-start items-center p-4 border rounded-lg min-w-80 min-h-80 bg-gradient-to-br from-yellow-100 to-orange-100">
-        <div [ngClass]="{'hidden': !isInvalid}" class="h-2 min-h-2 text-xs text-red-500">*Email or Password not valid</div>
+        <div [ngClass]="{'hidden': !isInvalid}" class="h-2 min-h-2 text-xs text-red-500">*Email or Password not valid
+        </div>
         <div class="p-3">Please Login</div>
         <div class="my-1">
             <form class="flex flex-col justify-start items-center" [formGroup]="loginForm" (submit)="onSubmit()">
-                <p-floatLabel class="p-2 mb-3 w-full">
-                    <input class="w-[17rem]" pInputText id="email" formControlName="email" />
+                <p-floatLabel class="p-2 mb-3 min-w-full">
+                    <input class="min-w-full" pInputText id="email" formControlName="email" />
                     <label for="email">Email</label>
                 </p-floatLabel>
-                <p-floatLabel class="p-2 w-full">
+                <p-floatLabel class="p-2 min-w-full">
                     <p-password formControlName="password" [feedback]="false" toggleMask="true" />
                     <label for="password">Password</label>
                 </p-floatLabel>
@@ -21,8 +22,9 @@
         <div class="absolute w- bottom-2 right-0 flex flex-col justify-center items-center w-full text-xs">
             <div class="text-xs">Select a Demo User</div>
             <div>
-                <p-dropdown [options]="demouser" styleClass="max-w-60 w-48 m-w-48 min-h-10" [(ngModel)]="selectedDemoUser" (onChange)="updateDefaultUser($event)" optionLabel="first_name" [showClear]="true"
-                    placeholder="Select Demo User">
+                <p-dropdown [options]="demouser" styleClass="max-w-60 w-48 m-w-48 min-h-10"
+                    [(ngModel)]="selectedDemoUser" (onChange)="updateDefaultUser($event)" optionLabel="first_name"
+                    [showClear]="true" placeholder="Select Demo User">
                     <ng-template pTemplate="selectedItem">
                         <div class="flex flex-row justify-start items-center gap-1" *ngIf="selectedDemoUser">
                             <p-avatar styleClass="w-6 h-6" image={{selectedDemoUser.image}} shape="circle" />

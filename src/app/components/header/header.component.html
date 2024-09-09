@@ -8,7 +8,7 @@
                 </div>
             </div>
         </a>
-        <app-nav-menu class="hidden md:flex" [isLogin]="isLogin" />
+        <app-nav-menu class="hidden md:flex" [flexRow]="true" [isLogin]="isLogin" />
         <div class="flex flex-row justify-between items-center gap-4">
             <!-- <div>Language</div> -->
 
@@ -42,7 +42,7 @@
                 <span class="text-xs text-red-500">{{loginService.currentUser?.authority | titlecase}}</span>
             </div>
         </div>
-        <app-nav-menu [isLogin]="isLogin" />
+        <app-nav-menu [isLogin]="isLogin" [flexRow]="false" />
 
         <button (click)="handleLogin()"
             class="p-4 my-6 border rounded-full hover:border-orange-500 hover:text-orange-500  ">{{!isLogin?"Sign
