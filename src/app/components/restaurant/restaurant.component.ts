@@ -94,6 +94,7 @@ export class RestaurantComponent implements OnInit {
         });
       }
     } else {
+      this.markAllAsTouched(this.form)
       this.isInvalid = true;
       this.messageService.add({
         severity: 'error',
@@ -101,6 +102,17 @@ export class RestaurantComponent implements OnInit {
         detail: `Resturant Data Not Valid Check Validation Error`,
       });
     }
+  }
+
+  markAllAsTouched(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach(key => {
+      const control = formGroup.get(key);
+      if (control && control instanceof FormGroup) {
+        this.markAllAsTouched(control);
+      } else {
+        control?.markAsTouched();
+      }
+    });
   }
 
   delete(event: Event) {
